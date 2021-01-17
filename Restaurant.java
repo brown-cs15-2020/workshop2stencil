@@ -1,21 +1,29 @@
 package workshop2stencil;
 
-import java.util.Scanner;
-
 public class Restaurant {
-    workshop2solution.Chef _mainChef;
-    int _numberOfOrders;
+    private Chef _mainChef;
+    //TODO: declare another Chef instance variable
+    public Restaurant() {
+        _mainChef = new Chef("Andy");
+        // TODO: Create the other chef (initialize and instantiate)
+        this.createMenu();
+    }
+    public void createMenu(){
+        _mainChef.setSignatureDish("cookies");
+        _mainChef.setSignaturePrice(6);
 
-    //TODO: is there anything missing here?
+        // TODO: use the getters and setters to add the other chefs signature dish
 
-    public void takeOrder() {
-        Scanner myScanner = new Scanner(System.in);
-        System.out.print("\nWhat would you like to eat? ");
-        _mainChef.cook(myScanner.nextLine());
-        _numberOfOrders +=1;
     }
 
-    /*TODO: write a method to print out how much is owed based on the
-     * number of orders (HINT: the chef can help us calculate this!)
-     */
+    public void seeMenu(){
+        System.out.println(_mainChef.getSignatureDish() + ", "+ _mainChef.getSignaturePrice());
+        // TODO: use the getters to print out the sous chefs signature dish
+        // TODO: add another dish to the menu
+        System.out.println("");
+
+        // TODO: have our 2 chefs cook something
+        System.out.println("");
+
+    }
 }
